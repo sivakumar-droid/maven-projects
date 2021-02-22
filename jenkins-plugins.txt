@@ -1,0 +1,5 @@
+
+deploy to container (even for non container war deployment)
+maven integrations 
+maven invoker 
+git

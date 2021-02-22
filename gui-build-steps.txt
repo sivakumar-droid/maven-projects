@@ -1,0 +1,20 @@
+
+For GUI based maven project not pipeline or multibrach pipeline project:
+-----------------------------------------------------------------------------------------------------
+build trigger -> git with password 
+	        poll SCM with one minute cron trigger * * * * * or 5 minute */5 * * * *
+
+pre step -> none 
+
+build ->  root pom -> pom.xml
+               goals and options -> clean install package 
+
+post step -> none (only execute if build passes or build is unstable or run regardless of build result)
+
+Post build action -> Deploy war/ear to container 
+	               WAR/EAR file location in git clone - give **/*.war
+	                contect path  - none
+		container -> select tomcat version of the destination server version 
+			    credentiasl -> user with manage-script role added in tomcat location 
+			     tomcat URL -> http://ip:8080/
+		
